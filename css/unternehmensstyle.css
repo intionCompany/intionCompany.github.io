@@ -1,0 +1,452 @@
+/* ================================
+   Base / Global Styles
+================================ */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #333;
+    background: #fff;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.company-logo {
+    height: 100px;
+    width: auto;
+    margin-right: 20px;
+}
+
+/* ================================
+   Navigation
+================================ */
+.topnav {
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 110px;
+    padding: 0 20px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.desktopNav,
+.mobileNav {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    font-size: 0.95em;
+    width: 100%;
+    justify-content: center;
+}
+
+.desktopNav .nav-item a {
+    color: #333;
+    padding: 5px;
+    border-radius: 4px;
+    transition: color 0.3s;
+}
+
+.desktopNav .nav-item a:hover {
+    color: #2981EB;
+}
+
+/* Hamburger Icon */
+.HamburgerIcon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.HamburgerIcon div {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    margin: 4px 0;
+}
+
+/* Mobile Nav */
+.mobileNav {
+    display: none;
+}
+
+.mobileNav-close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.5em;
+    cursor: pointer;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Responsive Navigation */
+@media (max-width: 800px) {
+    .desktopNav {
+        display: none;
+    }
+    .HamburgerIcon {
+        display: flex;
+    }
+    .mobileNav {
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        padding: 10px 0;
+        position: relative;
+    }
+
+    .mobileNav.active {
+        display: flex;
+        position: absolute;
+        top: 110px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .mobileNav a {
+        color: #333;
+        padding: 10px 20px;
+        width: 100%;
+    }
+
+    .mobileNav a:hover {
+        color: #2981EB;
+    }
+}
+
+/* ================================
+   Hero Section
+================================ */
+.hero-section {
+    position: relative;
+    padding: 80px 20px;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin: 0 auto;
+    height: calc(100vh - 110px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 85.25%, 0% 100%);
+    overflow: hidden;
+    will-change: opacity;
+    background-image: url('../Images/company.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    animation: fadeInBackground 1s ease-out forwards;
+}
+
+@keyframes zoomIn {
+    from {
+        background-size: 110% auto;
+    }
+    to {
+        background-size: 110% auto;
+    }
+}
+
+.hero-section::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: fadeInBackground 1s ease-out forwards;
+    z-index: 0;
+}
+
+.hero-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    z-index: 1;
+}
+
+@keyframes fadeInBackground {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+
+.hero-text {
+    color: white;
+    margin-bottom: 30vh;
+    transform: translateY(100px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.hero-text h1 {
+    font-size: 4em;
+    font-weight: 600;
+    color: white;
+    max-width: 500px;
+    border-radius: 10px;
+    margin: 0 auto; 
+    text-align: center;
+}
+
+.hero-text h2 {
+    font-size: 1.3em;
+    margin-bottom: 1em;
+    font-weight: 400;
+    color: #555;
+}
+
+.hero-text p {
+    font-size: 1em;
+    line-height: 1.7em;
+    color: white;
+    margin-bottom: 1em;
+}
+
+.hero-text div {
+    color: white;
+   /* background-color: rgba(41, 129, 235, 1);*/
+   background-color: black;
+    max-width: 500px;
+ /*   border-radius: 10px;*/
+    padding: 15px;
+    max-width: 500px;
+    margin: 0 auto; 
+}
+
+/* ================================
+   Reusable Section Classes
+================================ */
+.section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.section-white {
+    background: #fff;
+}
+
+.section-light {
+    background: #f0f4f9;
+}
+
+.section-heading2 {
+    font-size: 2.2em;
+    margin-bottom: 40px;
+    text-align: center;
+    font-weight: 500;
+    color: #2981EB;
+}
+
+.section-heading {
+    font-size: 2.2em;
+    margin-bottom: 40px;
+    text-align: center;
+    font-weight: 500;
+    color: #2981EB;
+}
+/* ================================
+   About Section
+================================ */
+.about-section {
+    text-align: left;
+}
+
+.about-content {
+    margin: 0 auto;
+    line-height: 1.7em;
+    color: #555;
+    font-size: 1.5em;
+}
+
+/* ================================
+   Founder Section
+================================ */
+.founder-section {
+    text-align: left;
+}
+
+.founder-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    font-size: 1em;
+}
+
+.founder-image img {
+    max-width: 300px;
+   /* border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);*/
+}
+
+.founder-text {
+    max-width: 600px;
+    line-height: 1.7em;
+    color: #555;
+}
+
+.founder-text h3 {
+    font-size: 1.6em;
+    margin-bottom: 20px;
+    color: #2981EB;
+}
+
+/* ================================
+   Focus Section
+================================ */
+.focus-section {
+    text-align: left;
+}
+
+.focus-content {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #555;
+    line-height: 1.7em;
+    font-size: 1.2em;
+}
+
+.focus-content ul {
+    list-style: disc;
+    text-align: left;
+    margin: 20px auto;
+    padding-left: 20px;
+}
+
+/* ================================
+   CTA Section
+================================ */
+.cta-section {
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #555;
+    font-size: 1.2em;
+}
+
+.custom-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(135deg, #2981EB, #29b1eb);
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 8px 15px rgba(78, 84, 200, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.custom-button:hover {
+    background: linear-gradient(135deg, #29b1eb, #2981EB);
+    box-shadow: 0 15px 25px rgba(78, 84, 200, 0.5);
+    transform: translateY(-3px);
+}
+
+.custom-button:active {
+    background: linear-gradient(135deg, #2981EB, #29b1eb);
+    box-shadow: 0 4px 8px rgba(78, 84, 200, 0.2);
+    transform: translateY(2px);
+}
+
+/* ================================
+   Footer
+   (If you have a separate footerstyle.css, you can remove or merge these)
+================================ */
+.site-footer {
+    background: #f9f9f9;
+    border-top: 1px solid #ddd;
+    padding: 40px 20px;
+    margin-top: 40px;
+    box-sizing: border-box;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 0 10%;
+}
+
+.footer-section h4 {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.footer-section p,
+.footer-section a {
+    font-size: 0.95em;
+    color: #555;
+}
+
+.footer-section a:hover {
+    color: #2981EB;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #ddd;
+    padding: 20px 10%;
+    text-align: center;
+    font-size: 0.9em;
+    color: #555;
+}
