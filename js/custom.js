@@ -130,7 +130,7 @@ $(document).ready(function () {
  
      const functionUrl2 = 'https://websiteform.azurewebsites.net/api/HttpTrigger2';
      const requestData = {
-         Betreff: document.getElementById('subject').value,
+         Betreff: "intion: " + document.getElementById('subject').value,
          Anschreiben: document.getElementById('description').value,
          Vorname: document.getElementById('vorname').value,
          Nachname: document.getElementById('nachname').value,
