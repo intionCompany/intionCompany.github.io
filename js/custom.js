@@ -106,12 +106,12 @@ $(document).ready(function () {
  function showContactForm() {
      document.getElementById('contactForm').reset();
      document.getElementById('overlay').style.display = 'block';
-     document.getElementById('contactFormModal').style.display = 'block';
+   /*  document.getElementById('contactFormModal').style.display = 'block';*/
  }
  
  function cancelForm() {
      document.getElementById('overlay').style.display = 'none';
-     document.getElementById('contactFormModal').style.display = 'none';
+  /*   document.getElementById('contactFormModal').style.display = 'none';*/
      document.getElementById('thankYouMessageContainer').style.display = 'none';
      document.getElementById('thankYouMessage').style.display = 'none';
  }
