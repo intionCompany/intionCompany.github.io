@@ -126,7 +126,7 @@ $(document).ready(function () {
  function submitForm() {
      event.preventDefault();
     /*document.getElementById('overlay').style.display = 'none';*/
-     document.getElementById('contactFormModal').style.display = 'none';
+     document.getElementById('contactForm').style.display = 'none';
  
      const functionUrl2 = 'https://websiteform.azurewebsites.net/api/HttpTrigger2';
      const requestData = {
