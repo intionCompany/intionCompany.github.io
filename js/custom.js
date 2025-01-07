@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    /*c onst functionUrl = 'https://websiteform.azurewebsites.net/api/HttpTrigger1';
+    const functionUrl = 'https://websiteform.azurewebsites.net/api/HttpTrigger1';
      const requestData = { add: 1 };
  
      fetch(functionUrl, {
@@ -8,7 +8,7 @@ $(document).ready(function () {
              'Content-Type': 'application/json'
          },
          body: JSON.stringify(requestData)
-     });*/
+     });
  
      let isClicked = false;
  
