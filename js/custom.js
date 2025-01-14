@@ -145,26 +145,9 @@ function submitForm() {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(requestData)
-    }).then(response => {
-        if (!response.ok) {
-            // Handle the error
-            console.error('Error with the request:', response.statusText);
-            alert('There was an issue with your submission. Please try again later.');
-            document.getElementById('contactForm').style.display = 'block';
-            return;
-        }
-
-        return response.json();
-    })
-        .then(data => {
-            window.location.href = 'thankyou.html';
-        })
-        .catch(error => {
-            
-            console.error('Fetch error:', error);
-            alert('An unexpected error occurred. Please try again later.');
-            document.getElementById('contactForm').style.display = 'block';
-        });
+    }).then(() => {
+        window.location.href = 'thankyou.html';
+    });
     /*
     window.location.href = 'thankyou.html'
     document.getElementById('thankYouMessageContainer').style.display = 'block';
