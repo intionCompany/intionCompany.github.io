@@ -160,6 +160,8 @@ function submitForm() {
             window.location.href = 'thankyou.html';
         })
         .catch(error => {
+            
+            console.error('Fetch error:', error);
             alert('An unexpected error occurred. Please try again later.');
             document.getElementById('contactForm').style.display = 'block';
         });
